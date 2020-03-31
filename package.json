@@ -1,0 +1,31 @@
+{
+  "name": "clone-layouts",
+  "version": "1.0.0",
+  "description": "Cloning layouts of awesome websites to improve SCSS skill",
+  "browserslist": "> 0.25%, not dead",
+  "scripts": {
+    "dev": "gulp dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YunhwanJung/clone-layouts.git"
+  },
+  "author": "Aiden Jung",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YunhwanJung/clone-layouts/issues"
+  },
+  "homepage": "https://github.com/YunhwanJung/clone-layouts#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/register": "^7.9.0",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-csso": "^4.0.1",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.13.1"
+  }
+}
