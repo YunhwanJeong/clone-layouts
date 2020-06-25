@@ -5,7 +5,7 @@ Cloning layouts of awesome websites to improve SCSS skill
 ## To Clone:
 
 - [x] https://besthorrorscenes.com/
-- [ ] https://paint-box.com/
+- [x] https://paint-box.com/
 - [ ] http://10x19.co/
 - [ ] http://www.z-o-o.fr/
 - [ ] https://schwartzmedia.com.au/
