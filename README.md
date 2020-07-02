@@ -6,12 +6,4 @@ Cloning layouts of awesome websites to improve SCSS skill
 
 - [x] https://besthorrorscenes.com/
 - [x] https://paint-box.com/
-- [ ] http://10x19.co/
-- [ ] http://www.z-o-o.fr/
-- [ ] https://schwartzmedia.com.au/
-- [ ] https://tolv.dk/
-- [ ] https://rodicdavidson.co.uk/
-- [ ] https://beige.de/
-- [ ] http://donicaida.com/
-- [ ] https://canalstreet.market/
-- [ ] https://wonhundred.com/
+- [ ] https://www.magicleap.com/en-us
