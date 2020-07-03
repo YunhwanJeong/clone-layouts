@@ -2,11 +2,16 @@
     box-sizing: border-box;
 }
 
+body {
+    font-size: 4vw;
+    font-family: 'Roboto', sans-serif;
+}
+
 .outer-header {
     width: 100%;
     height: 5.912vh;
     position: fixed;
-    top: 0;
+    top: 0px;
     background-color: transparent;
     .inner-header {
         width: 100%;
@@ -18,10 +23,50 @@
             height: 100%;
             display: flex;
             align-items: center;
-            padding: 0 2.1341% 0 4.265%;
+            padding: 0px 2.1341% 0 4.265%;
             cursor: pointer;
             .inner-header__branding-svg {
                 // fill: white;
+            }
+        }
+        .inner-header__nav {
+        }
+        .inner-header__kit {
+            height: 100%;
+            margin: auto 0px;
+            .inner-header__kit--shop-button {
+                display: inline-block;
+                margin-left: 32px;
+                cursor: pointer;
+                border: 2px solid black;
+                border-radius: 9999px;
+                padding: 7px 16px;
+            }
+            .inner-header__kit--toggle-button {
+                width: 57px;
+                height: 100%;
+                cursor: pointer;
+                padding: 0px 16px;
+                .hamburger {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    .hamburger__line {
+                        position: absolute;
+                        &:nth-child(1) {
+                            top: 35%;
+                            width: 100%;
+                            height: 5px;
+                            left: 0px;
+                        }
+                        &:nth-child(2) {
+                            top: 56%;
+                            width: 100%;
+                            height: 5px;
+                            left: 0px;
+                        }
+                    }
+                }
             }
         }
     }
