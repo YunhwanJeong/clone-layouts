@@ -220,10 +220,70 @@ body {
                 }
             }
             .not-ar {
-
+                text-align: center;
+                .not-ar__image {
+                    margin-bottom: 10%;
+                    img {
+                        border-radius: 16px;
+                        max-width: 100%;
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                .not-ar__contents {
+                    .not-ar__contents--heading {
+                        font-size: 9vw;
+                        font-weight: 600;
+                        letter-spacing: 0.07rem;
+                        margin-bottom: 7%;
+                        line-height: 1.125;
+                    }
+                    .not-ar__contents--subheading {
+                        max-width: 95%;
+                        margin: 0% auto;
+                        font-size: 5.1vw;
+                        font-weight: 400;
+                        color: $subheading;
+                        line-height: 1.5;
+                    }
+                }
             }
-            .spetial-computer {
-
+            .spatial-computer {
+                text-align: center;
+                .spatial-computer__image {
+                    margin-bottom: 10%;
+                    img {
+                        border-radius: 16px;
+                        max-width: 100%;
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                .spatial-computer__contents {
+                    .spatial-computer__contents--heading {
+                        font-size: 9vw;
+                        font-weight: 600;
+                        letter-spacing: 0.07rem;
+                        margin-bottom: 7%;
+                        line-height: 1.125;
+                    }
+                    .spatial-computer__contents--subheading {
+                        max-width: 93%;
+                        margin: 0% auto;
+                        font-size: 5.1vw;
+                        font-weight: 400;
+                        color: $subheading;
+                        line-height: 1.4;
+                        margin-bottom: 7%;
+                    }
+                    .reverse-button {
+                        font-weight: 600;
+                        color: $signiture-red;
+                        border-radius: 9999px;
+                        border: 2.3px solid $signiture-red;
+                        padding: 9px 18px;
+                    }
+                }
             }
         }
     }
