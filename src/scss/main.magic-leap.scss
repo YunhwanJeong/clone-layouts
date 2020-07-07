@@ -36,13 +36,13 @@ body {
         height: 100%;
         margin: auto 0px;
         .inner-header__kit--shop-button {
-            font-size: 3.8vw;
-            font-weight: 900;
+            font-size: 3.9vw;
+            font-weight: 700;
             display: inline-block;
             margin-left: 32px;
             cursor: pointer;
             border-radius: 9999px;
-            padding: 9px 18px;
+            padding: 8px 16px;
             background-color: white;
         }
         .inner-header__kit--toggle-button {
@@ -104,8 +104,8 @@ body {
                     text-align: center;
                     font-style: italic;
                     font-size: 11vw;
-                    font-weight: 500;
-                    letter-spacing: 0.3px;
+                    font-weight: 400;
+                    letter-spacing: 0.04rem;
                     line-height: 1.2;
                     text-transform: uppercase;
                     margin-bottom: 5%;
@@ -113,11 +113,11 @@ body {
                 .hero-wrapper__contents--subheading {
                     text-align: center;
                     font-size: 5vw;
-                    font-weight: 700;
+                    font-weight: 400;
                     max-width: 80%;
                     margin-bottom: 7.5%;
                     line-height: 1.4;
-                    letter-spacing: 0.7px;
+                    letter-spacing: 0.05rem;
                 }
                 .button {
                     padding: 13px 18px;
@@ -126,8 +126,8 @@ body {
                     a {
                         cursor: pointer;
                         span {
-                            font-weight: 900;
-                            letter-spacing: 0.5px;
+                            font-weight: 600;
+                            letter-spacing: 0.04rem;
                         }
                     }
                 }
@@ -164,14 +164,66 @@ body {
                 h2 {
                     font-style: italic;
                     font-size: 11vw;
+                    font-weight: 300;
                     text-transform: uppercase;
                     line-height: 1.1;
                     margin-bottom: 6%;
                 }
                 p {
                     font-size: 4.5vw;
+                    font-weight: 300;
                     line-height: 1.5;
                 }
+            }
+        }
+    }
+    .product-intro {
+        padding: 17.054% 4.263%;
+        .product-intro__heading {
+            font-size: 10.5vw;
+            font-weight: 700;
+            line-height: 1.2;
+            text-align: center;
+            padding: 0% 10%;
+            margin-bottom: 15%;
+        }
+        .product-intro__contents {
+            & > div:not(:last-child) {
+                margin-bottom: 15%;
+            }
+            .not-vr {
+                text-align: center;
+                .not-vr__image {
+                    margin-bottom: 10%;
+                    img {
+                        border-radius: 16px;
+                        max-width: 70%;
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                .not-vr__contents {
+                    .not-vr__contents--heading {
+                        font-size: 9vw;
+                        font-weight: 600;
+                        letter-spacing: 0.07rem;
+                        margin-bottom: 7%;
+                    }
+                    .not-vr__contents--subheading {
+                        max-width: 95%;
+                        margin: 0% auto;
+                        font-size: 5.1vw;
+                        font-weight: 400;
+                        color: $subheading;
+                        line-height: 1.5;
+                    }
+                }
+            }
+            .not-ar {
+
+            }
+            .spetial-computer {
+
             }
         }
     }
