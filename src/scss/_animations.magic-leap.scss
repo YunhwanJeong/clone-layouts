@@ -1,0 +1,10 @@
+@keyframes leftSlideShow {
+    100% {
+        transform: translateX(-200%);
+    }
+}
+@keyframes rightSlideShow {
+    100% {
+        transform: translateX(200%);
+    }
+}

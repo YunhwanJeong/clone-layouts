@@ -1,0 +1,14 @@
+@mixin a() {
+    cursor: pointer;
+    span {
+        font-weight: 500;
+        letter-spacing: 0.04rem;
+    }
+}
+
+@mixin button() {
+    padding: 13px 18px;
+    background-color: $signiture-red;
+    border-radius: 9999px;
+    @include a();
+}
