@@ -653,12 +653,96 @@ body {
                 }
                 .follow-links__link {
                     color: $link-gray;
+                    transition: color 0.2s ease-in-out 0s;
+                    &:hover, &:active {
+                        color: $footer-gray;
+                    } 
                     &:not(:last-child) {
                         margin-right: 3.8%;
                     }
                     svg {
                         width: 32px;
                         height: 32px;
+                    }
+                }
+            }
+        }
+    }
+    .footer__bottom {
+        background-color: $footer-bottom-gray;
+        font-size: 3.64vw;
+        .footer__bottom--wrapper {
+            margin-left: 4%;
+            margin-right: 4%;
+            & > div {
+                padding-top: 8%;
+                padding-bottom: 2%;
+            }
+            a:nth-child(1) {
+                margin-bottom: 26.5px;
+            }
+            a:nth-child(2) {
+                margin-bottom: 23px;
+            }
+            .terms {
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 0.7px solid $non-activated-gray;
+                letter-spacing: 0.02rem;
+                .terms__policy {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+                .terms__preferences {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                }
+            }
+            .company-info {
+                display: grid;
+                grid-template-columns: 1fr;
+                color: $link-gray;
+                font-size: 3.75vw;
+                font-weight: 300;
+                padding-top: 5%;
+                padding-top: 5%;
+                letter-spacing: 0.02rem;
+                line-height: 1.5;
+                .company-info__love {
+                    order: 2;
+                    text-align: center;
+                    svg {
+                        color: $signiture-red;
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+                .company-info__copyright {
+                    order: 3;
+                    text-align: center;
+                }
+                .company-info__language-select {
+                    position: relative;
+                    order: 1;
+                    text-align: center;
+                    select {
+                        overflow: hidden;
+                        appearance: none;
+                        color: $link-gray;
+                        font-size: 4.35vw;
+                        font-weight: 300;
+                        font-family: 'Roboto', sans-serif;
+                        line-height: 1.2;
+                        margin-right: 30px;
+                    }
+                    svg {
+                        position: absolute;
+                        left: 58.5%;
+                        top:15%;
+                        width: 15px;
+                        height: 15px;
                     }
                 }
             }
