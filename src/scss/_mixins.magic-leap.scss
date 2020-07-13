@@ -1,3 +1,15 @@
+@mixin screen($platform: false, $subPlatform: false) {
+    @if ($platform == t) {
+        @media screen and (min-width: $min-t) and (max-width: $max-t){
+            @content;
+        }
+    } @else if ($platform == pc) {
+        @media screen and (min-width: $min-pc) {
+            @content;
+        }
+    }
+}
+
 @mixin a() {
     cursor: pointer;
     span {
