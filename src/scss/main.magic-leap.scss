@@ -57,7 +57,8 @@ body {
             margin-left: 32px;
             cursor: pointer;
             border-radius: 9999px;
-            padding: 8px 16px;
+            padding: 9px 18px;
+            letter-spacing: 0.03rem;
             background-color: white;
         }
         .inner-header__kit--shop-button-red {
@@ -68,7 +69,8 @@ body {
             margin-left: 32px;
             cursor: pointer;
             border-radius: 9999px;
-            padding: 8px 16px;
+            padding: 9px 18px;
+            letter-spacing: 0.03rem;
             background-color: $signiture-red;
         }
         .inner-header__kit--toggle-button {
@@ -113,42 +115,47 @@ body {
         flex-direction: column;
         .hero {
             min-height: 100vh;
-            .hero-wrapper {
+            .hero__ensure-nav-space {
                 height: 100vh;
                 position: relative;
                 padding-top: 45%;
-                .hero-wrapper__contents {
-                    color: white;
-                    height: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    .hero-wrapper__contents--heading {
-                        width: 100%;
-                        text-align: center;
-                        font-style: italic;
-                        font-size: 10vw;
-                        font-weight: 300;
-                        letter-spacing: 0.04rem;
-                        line-height: 1.2;
-                        text-transform: uppercase;
-                        margin-bottom: 5%;
-                    }
-                    .hero-wrapper__contents--subheading {
-                        text-align: center;
-                        font-size: 5vw;
-                        font-weight: 300;
-                        max-width: 80%;
-                        margin-bottom: 7.5%;
-                        line-height: 1.5;
-                        letter-spacing: 0.05rem;
-                    }
-                    .button {
-                        @include button();
+                .hero-wrapper {
+                    position: absolute;
+                    height: 100vh;
+                    top: 0;
+                    .hero-wrapper__contents {
+                        color: white;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        .hero-wrapper__contents--heading {
+                            width: 100%;
+                            text-align: center;
+                            font-style: italic;
+                            font-size: 10vw;
+                            font-weight: 300;
+                            letter-spacing: 0.04rem;
+                            line-height: 1.2;
+                            text-transform: uppercase;
+                            margin-bottom: 5%;
+                        }
+                        .hero-wrapper__contents--subheading {
+                            text-align: center;
+                            font-size: 5vw;
+                            font-weight: 300;
+                            max-width: 80%;
+                            margin-bottom: 7.5%;
+                            line-height: 1.5;
+                            letter-spacing: 0.05rem;
+                        }
+                        .button {
+                            @include button();
+                        }
                     }
                 }
-                .hero-wrapper__video {
+                .hero__video {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
