@@ -11,12 +11,22 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.outer-header {
+.outer-header-transparent {
     width: 100%;
     height: 5.912vh;
     position: fixed;
     top: 0px;
     background-color: transparent;
+    z-index: 1000;
+}
+.outer-header-white {
+    width: 100%;
+    height: 5.912vh;
+    position: fixed;
+    top: 0px;
+    background-color: white;
+    border-bottom: 1px solid $footer-bottom-gray;
+    z-index: 1000;
 }
 .inner-header {
     width: 100%;
@@ -30,22 +40,36 @@ body {
         align-items: center;
         padding: 0px 2.1341% 0 4.265%;
         cursor: pointer;
-        .inner-header__branding-svg {
+        .inner-header__branding-svg--top {
             fill: white;
+        }
+        .inner-header__branding-svg--not-top {
+            fill: $signiture-red;
         }
     }
     .inner-header__kit {
         height: 100%;
         margin: auto 0px;
-        .inner-header__kit--shop-button {
-            font-size: 3.9vw;
-            font-weight: 700;
+        .inner-header__kit--shop-button-white {
+            font-size: 3.7vw;
+            font-weight: 500;
             display: inline-block;
             margin-left: 32px;
             cursor: pointer;
             border-radius: 9999px;
             padding: 8px 16px;
             background-color: white;
+        }
+        .inner-header__kit--shop-button-red {
+            color: white;
+            font-size: 3.7vw;
+            font-weight: 500;
+            display: inline-block;
+            margin-left: 32px;
+            cursor: pointer;
+            border-radius: 9999px;
+            padding: 8px 16px;
+            background-color: $signiture-red;
         }
         .inner-header__kit--toggle-button {
             width: 57px;
@@ -104,8 +128,8 @@ body {
                         width: 100%;
                         text-align: center;
                         font-style: italic;
-                        font-size: 11vw;
-                        font-weight: 400;
+                        font-size: 10vw;
+                        font-weight: 300;
                         letter-spacing: 0.04rem;
                         line-height: 1.2;
                         text-transform: uppercase;
@@ -114,10 +138,10 @@ body {
                     .hero-wrapper__contents--subheading {
                         text-align: center;
                         font-size: 5vw;
-                        font-weight: 400;
+                        font-weight: 300;
                         max-width: 80%;
                         margin-bottom: 7.5%;
-                        line-height: 1.4;
+                        line-height: 1.5;
                         letter-spacing: 0.05rem;
                     }
                     .button {
@@ -155,14 +179,14 @@ body {
                     margin: 5% 7%;
                     h2 {
                         font-style: italic;
-                        font-size: 11vw;
+                        font-size: 10.5vw;
                         font-weight: 300;
                         text-transform: uppercase;
                         line-height: 1.1;
                         margin-bottom: 6%;
                     }
                     p {
-                        font-size: 4.5vw;
+                        font-size: 4.2vw;
                         font-weight: 300;
                         line-height: 1.5;
                     }
@@ -172,8 +196,9 @@ body {
         .product-intro {
             padding: 17.054% 4.263%;
             .product-intro__heading {
-                font-size: 10.5vw;
-                font-weight: 700;
+                font-size: 9.5vw;
+                font-weight: 600;
+                letter-spacing: 0.02rem;
                 line-height: 1.2;
                 text-align: center;
                 padding: 0% 10%;
@@ -196,7 +221,7 @@ body {
                     }
                     .not-vr__contents {
                         .not-vr__contents--heading {
-                            font-size: 9vw;
+                            font-size: 8.7vw;
                             font-weight: 600;
                             letter-spacing: 0.07rem;
                             margin-bottom: 7%;
@@ -204,9 +229,10 @@ body {
                         .not-vr__contents--subheading {
                             max-width: 95%;
                             margin: 0% auto;
-                            font-size: 5.1vw;
-                            font-weight: 400;
+                            font-size: 4.6vw;
+                            font-weight: 300;
                             color: $subheading-gray;
+                            letter-spacing: 0.03rem;
                             line-height: 1.5;
                         }
                     }
@@ -224,7 +250,7 @@ body {
                     }
                     .not-ar__contents {
                         .not-ar__contents--heading {
-                            font-size: 9vw;
+                            font-size: 8.7vw;
                             font-weight: 600;
                             letter-spacing: 0.07rem;
                             margin-bottom: 7%;
@@ -233,9 +259,10 @@ body {
                         .not-ar__contents--subheading {
                             max-width: 95%;
                             margin: 0% auto;
-                            font-size: 5.1vw;
-                            font-weight: 400;
+                            font-size: 4.6vw;
+                            font-weight: 300;
                             color: $subheading-gray;
+                            letter-spacing: 0.03rem;
                             line-height: 1.5;
                         }
                     }
@@ -253,7 +280,7 @@ body {
                     }
                     .spatial-computer__contents {
                         .spatial-computer__contents--heading {
-                            font-size: 9vw;
+                            font-size: 8.7vw;
                             font-weight: 600;
                             letter-spacing: 0.07rem;
                             margin-bottom: 7%;
@@ -262,18 +289,20 @@ body {
                         .spatial-computer__contents--subheading {
                             max-width: 93%;
                             margin: 0% auto;
-                            font-size: 5.1vw;
-                            font-weight: 400;
+                            font-size: 4.6vw;
+                            font-weight: 300;
                             color: $subheading-gray;
+                            letter-spacing: 0.03rem;
                             line-height: 1.4;
                             margin-bottom: 10%;
                         }
                         .reverse-button {
-                            font-weight: 600;
+                            font-weight: 500;
+                            font-size: 3.8vw;
                             color: $signiture-red;
                             border-radius: 9999px;
-                            border: 2.3px solid $signiture-red;
-                            padding: 9px 18px;
+                            border: 2px solid $signiture-red;
+                            padding: 9px 17px;
                         }
                     }
                 }
@@ -536,10 +565,7 @@ body {
                 text-align: center;
             }
             .news-letter__body {
-                color: $non-activated-gray;
-                & > div {
-                    margin-top: 15%;
-                }
+                color: $non-activated-font-gray;
                 input {
                     width: 100%;
                     height: 100%;
@@ -547,6 +573,8 @@ body {
                 }
                 label {
                     font-size: 4.3vw;
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: 300;
                     position: absolute;
                     left: 0;
                     top: 50%;
@@ -554,24 +582,29 @@ body {
                     transition: top 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
                 }
                 .news-letter__body--email {
+                    margin-top: 15.5%;
                     position: relative;
                     min-height: 5vh;
                     border-bottom: 1.67px solid $non-activated-gray;
                     input:focus + label {
                         top:0;
                         font-size: 3vw;
+                        color: $activated-gray;
                     }
                 }
                 .news-letter__body--name {
+                    margin-top: 13%;
                     position: relative;
                     min-height: 5vh;
                     border-bottom: 1.67px solid $non-activated-gray;
                     input:focus + label {
                         top:0;
                         font-size: 3vw;
+                        color: $activated-gray;
                     }
                 }
                 .news-letter__body--interest {
+                    margin-top: 15.5%;
                     position: relative;
                     min-height: 3.5vh;
                     border-bottom: 1.67px solid $non-activated-gray;
@@ -579,7 +612,9 @@ body {
                         width: 100%;
                         appearance: none;
                         font-size: 4.5vw;
-                        color: $non-activated-gray;
+                        font-family: 'Roboto', sans-serif;
+                        font-weight: 300;
+                        color: $non-activated-font-gray;
                         & > option {
                             color: black;
                         }
@@ -595,6 +630,7 @@ body {
                     }
                 }
                 .news-letter__body--explanation {
+                    margin-top: 15.5%;
                     p {
                         font-size: 3.82vw;
                         font-weight: 300;
@@ -604,6 +640,7 @@ body {
                     }
                 }
                 .news-letter__body--submit {
+                    margin-top: 10%;
                     text-align: center;
                     button {
                         @include button();
@@ -629,7 +666,7 @@ body {
         margin-right: 4%;
         .accordion {
             .accordion__item {
-                border-bottom: 1px solid $non-activated-gray;
+                border-bottom: 0.75px solid $non-activated-gray;
                 .accordion__item--heading {
                     display: block;
                     position: relative;
