@@ -1055,7 +1055,7 @@ body {
         background-color: $footer-bottom-gray;
         font-size: 3.64vw;
         @include screen(t) {
-            min-height: 50vh;
+            min-height: 43.5vh;
             font-size: 2vw;
         }
         .footer__bottom--wrapper {
