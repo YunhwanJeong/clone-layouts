@@ -1099,6 +1099,7 @@ body {
                 line-height: 1.5;
                 @include screen(t) {
                     font-size: 2vw;
+                    row-gap: 1px;
                 }
                 .company-info__love {
                     order: 2;
