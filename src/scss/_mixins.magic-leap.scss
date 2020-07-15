@@ -1,6 +1,10 @@
-@mixin screen($platform: false, $subPlatform: false) {
-    @if ($platform == t) {
-        @media screen and (min-width: $min-t) and (max-width: $max-t){
+@mixin screen ($platform: false, $subPlatform: false) {
+    @if ($platform == t and not $subPlatform) {
+        @media screen and (min-width: $min-t) and (max-width: $max-t) {
+            @content;
+        }
+    } @else if ($platform == t and $subPlatform == pc) {
+        @media screen and (min-width: $min-t) {
             @content;
         }
     } @else if ($platform == pc) {
@@ -10,17 +14,14 @@
     }
 }
 
-@mixin a() {
-    cursor: pointer;
-    span {
-        font-weight: 500;
-        letter-spacing: 0.04rem;
-    }
-}
-
 @mixin button() {
+    display: inline-block;
     padding: 13px 18px;
     background-color: $signiture-red;
     border-radius: 9999px;
-    @include a();
+    cursor: pointer;
+    line-height: 1;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.04rem;
 }

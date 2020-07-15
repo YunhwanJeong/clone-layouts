@@ -25,7 +25,7 @@ body {
     position: fixed;
     top: 0px;
     background-color: white;
-    border-bottom: 1px solid $footer-bottom-gray;
+    border-bottom: 0.5px solid $non-activated-gray;
     z-index: 1000;
 }
 .inner-header {
@@ -34,12 +34,19 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include screen(t) {
+        height: 56px;
+        padding-right: 24px;
+    }
     .inner-header__branding-wrapper {
         height: 100%;
         display: flex;
         align-items: center;
-        padding: 0px 2.1341% 0 4.265%;
         cursor: pointer;
+        padding: 0px 8px 0px 16px;
+        @include screen(t, pc) {
+            padding: 0px 8px 0px 24px;
+        }
         .inner-header__branding-svg--top {
             fill: white;
         }
@@ -50,8 +57,10 @@ body {
     .inner-header__kit {
         height: 100%;
         margin: auto 0px;
+        display: flex;
+        align-items: center;
         .inner-header__kit--shop-button-white {
-            font-size: 3.7vw;
+            font-size: 14px;
             font-weight: 500;
             display: inline-block;
             margin-left: 32px;
@@ -63,7 +72,7 @@ body {
         }
         .inner-header__kit--shop-button-red {
             color: white;
-            font-size: 3.7vw;
+            font-size: 14px;
             font-weight: 500;
             display: inline-block;
             margin-left: 32px;
@@ -74,27 +83,32 @@ body {
             background-color: $signiture-red;
         }
         .inner-header__kit--toggle-button {
-            width: 57px;
-            height: 100%;
             cursor: pointer;
             padding: 0px 16px;
+            height: 100%;
             .hamburger {
-                width: 100%;
+                width: 24px;
                 height: 100%;
                 position: relative;
                 .hamburger__line {
                     position: absolute;
                     &:nth-child(1) {
-                        top: 35%;
+                        top: 35.5%;
                         width: 100%;
                         height: 5px;
                         left: 0px;
+                        @include screen(t) {
+                            top: 37%;
+                        }
                     }
                     &:nth-child(2) {
                         top: 56%;
                         width: 100%;
                         height: 5px;
                         left: 0px;
+                        @include screen(t) {
+                            top: 54%;
+                        }
                     }
                 }
             }
@@ -121,6 +135,7 @@ body {
                 padding-top: 45%;
                 .hero-wrapper {
                     position: absolute;
+                    width: 100%;
                     height: 100vh;
                     top: 0;
                     .hero-wrapper__contents {
@@ -140,6 +155,11 @@ body {
                             line-height: 1.2;
                             text-transform: uppercase;
                             margin-bottom: 5%;
+                            @include screen(t) {
+                                font-size: 6vw;
+                                margin-bottom: 2.5%;
+                                line-height: 1.125;
+                            }
                         }
                         .hero-wrapper__contents--subheading {
                             text-align: center;
@@ -149,9 +169,25 @@ body {
                             margin-bottom: 7.5%;
                             line-height: 1.5;
                             letter-spacing: 0.05rem;
+                            @include screen(t) {
+                                font-size: 3vw;
+                                max-width: 40%;
+                                margin-bottom: 3.5%;
+                                line-height: 1.3;
+                            }
                         }
                         .button {
-                            @include button();
+                            align-items: center;
+                            display: flex;
+                            flex-direction: column;
+                            a {
+                                span {
+                                    @include button();
+                                    @include screen(t) {
+                                        padding: 14px 32px;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -171,9 +207,16 @@ body {
             min-height: 100vh;
             .device-intro-wrapper {
                 margin: 20% 5%;
+                @include screen(t) {
+                    margin: 12.5% 3.125%;
+                }
                 .device-intro-wrapper__image {
                     max-width: 100%;
                     height: auto;
+                    @include screen(t) {
+                        max-width: 69.445%;
+                        margin: 0 auto;
+                    }
                     img {
                         width: 100%;
                         height: auto;
@@ -191,39 +234,66 @@ body {
                         text-transform: uppercase;
                         line-height: 1.1;
                         margin-bottom: 6%;
+                        @include screen(t) {
+                            font-size: 6.3vw;
+                            text-align: center;
+                            margin-bottom: 3.5%;
+                        }
                     }
                     p {
                         font-size: 4.2vw;
                         font-weight: 300;
                         line-height: 1.5;
+                        @include screen(t) {
+                            font-size: 2.4vw
+                            ;
+                            max-width: 70%;
+                            margin: 0 auto;
+                        }
                     }
                 }
             }
         }
         .product-intro {
             padding: 17.054% 4.263%;
+            @include screen(t) {
+                padding: 12.5% 3.125%;
+            }
             .product-intro__heading {
                 font-size: 9.5vw;
                 font-weight: 600;
-                letter-spacing: 0.02rem;
+                letter-spacing: 0.03rem;
                 line-height: 1.2;
                 text-align: center;
                 padding: 0% 10%;
                 margin-bottom: 15%;
+                @include screen(t) {
+                    font-size: 6vw;
+                    margin-bottom: 8.89%;
+                }
             }
             .product-intro__contents {
                 & > div:not(:last-child) {
                     margin-bottom: 15%;
+                    @include screen(t) {
+                        margin-bottom: 10%;
+                    }
                 }
                 .not-vr {
                     text-align: center;
                     .not-vr__image {
                         margin-bottom: 10%;
+                        @include screen(t) {
+                            margin-bottom: 4%;
+                        }
                         img {
                             border-radius: 16px;
                             max-width: 70%;
                             width: 100%;
                             height: auto;
+                            @include screen(t) {
+                                max-width: 56.5%;
+                            }
                         }
                     }
                     .not-vr__contents {
@@ -232,15 +302,23 @@ body {
                             font-weight: 600;
                             letter-spacing: 0.07rem;
                             margin-bottom: 7%;
+                            @include screen(t) {
+                                font-size: 5.5vw;
+                                margin-bottom: 3%;
+                            }
                         }
                         .not-vr__contents--subheading {
                             max-width: 95%;
                             margin: 0% auto;
                             font-size: 4.6vw;
-                            font-weight: 300;
+                            font-weight: 400;
                             color: $subheading-gray;
                             letter-spacing: 0.03rem;
                             line-height: 1.5;
+                            @include screen(t) {
+                                font-size: 2.25vw;
+                                max-width: 70%;
+                            }
                         }
                     }
                 }
@@ -248,11 +326,17 @@ body {
                     text-align: center;
                     .not-ar__image {
                         margin-bottom: 10%;
+                        @include screen(t) {
+                            margin-bottom: 4%;
+                        }
                         img {
                             border-radius: 16px;
                             max-width: 100%;
                             width: 100%;
                             height: auto;
+                            @include screen(t) {
+                                max-width: 75%;
+                            }
                         }
                     }
                     .not-ar__contents {
@@ -262,15 +346,23 @@ body {
                             letter-spacing: 0.07rem;
                             margin-bottom: 7%;
                             line-height: 1.125;
+                            @include screen(t) {
+                                font-size: 5.3vw;
+                                margin-bottom: 3%;
+                            }
                         }
                         .not-ar__contents--subheading {
                             max-width: 95%;
                             margin: 0% auto;
                             font-size: 4.6vw;
-                            font-weight: 300;
+                            font-weight: 400;
                             color: $subheading-gray;
                             letter-spacing: 0.03rem;
                             line-height: 1.5;
+                            @include screen(t) {
+                                font-size: 2.25vw;
+                                max-width: 75%;
+                            }
                         }
                     }
                 }
@@ -278,30 +370,47 @@ body {
                     text-align: center;
                     .spatial-computer__image {
                         margin-bottom: 10%;
+                        @include screen(t) {
+                            margin-bottom: 4%;
+                        }
                         img {
                             border-radius: 16px;
-                            max-width: 100%;
                             width: 100%;
                             height: auto;
+                            @include screen(t) {
+                                max-width: 90%;
+                            }
                         }
                     }
                     .spatial-computer__contents {
                         .spatial-computer__contents--heading {
+                            display: block;
+                            margin: 0 auto;
+                            max-width: 100%;
                             font-size: 8.7vw;
                             font-weight: 600;
                             letter-spacing: 0.07rem;
                             margin-bottom: 7%;
                             line-height: 1.125;
+                            @include screen(t) {
+                                font-size: 5.3vw;
+                                margin-bottom: 3%;
+                            }
                         }
                         .spatial-computer__contents--subheading {
                             max-width: 93%;
                             margin: 0% auto;
                             font-size: 4.6vw;
-                            font-weight: 300;
+                            font-weight: 400;
                             color: $subheading-gray;
                             letter-spacing: 0.03rem;
                             line-height: 1.4;
                             margin-bottom: 10%;
+                            @include screen(t) {
+                                font-size: 2.225vw;
+                                max-width: 95.7%;
+                                margin-bottom: 6%;
+                            }
                         }
                         .reverse-button {
                             font-weight: 500;
@@ -310,19 +419,31 @@ body {
                             border-radius: 9999px;
                             border: 2px solid $signiture-red;
                             padding: 9px 17px;
+                            @include screen(t) {
+                                font-size: 2.1vw;
+                                font-weight: 500;
+                                padding: 14px 32px;
+                            }
                         }
                     }
                 }
             }
         }
         .enterprise-solutions {
+            background-color: $background-gray;
             .enterprise-solutions__intro {
                 background-color: $signiture-red;
                 padding: 0% 5%;
                 text-align: left;
+                @include screen(t) {
+                    padding: 0% 3%;
+                }
                 .enterprise-solutions__intro--wrapper {
                     padding-top: 5%;
                     color: white;
+                    @include screen(t) {
+                        padding-top: 3%;
+                    }
                     .enterprise-solutions__intro--link {
                         cursor: pointer;
                         picture {
@@ -342,6 +463,10 @@ body {
                         margin: 9% 2% 6% 2%;
                         line-height: 1.125;
                         text-transform: uppercase;
+                        @include screen(t) {
+                            font-size: 6.3vw;
+                            margin: 5% 1% 3% 1%;
+                        }
                     }
                     .enterprise-solutions__intro--subheading {
                         max-width: 93%;
@@ -350,15 +475,29 @@ body {
                         font-weight: 300;
                         line-height: 1.4;
                         padding-bottom: 10%;
+                        @include screen(t) {
+                            font-size: 3vw;
+                            text-align: center;
+                            letter-spacing: 0.03rem;
+                        }
                     }
                 }
             }
             .enterprise-solutions__contents {
                 .enterprise-solutions__contents--wrapper {
                     padding: 8% 0%;
+                    background-color: white;
+                    @include screen(t) {
+                        width: 98%;
+                        border-radius: 16px;
+                        margin: -8% auto 0 auto;
+                    }
                     .explore-enterprise-solutions {
                         .explore-enterprise-solutions__heading {
                             margin-bottom: 5%;
+                            @include screen(t) {
+                                margin-bottom: 0.5%;
+                            }
                             h2 {
                                 max-width: 85%;
                                 text-align: center;
@@ -367,6 +506,9 @@ body {
                                 font-weight: 700;
                                 line-height: 1.3;
                                 letter-spacing: 0.03rem;
+                                @include screen(t) {
+                                    font-size: 3.9vw;
+                                }
                             }
                         }
                         .explore-enterprise-solutions__contents {
@@ -388,6 +530,9 @@ body {
                                             margin-right: 2%;
                                             & > *:not(:last-child) {
                                                 margin-bottom: 10%;
+                                                @include screen(t) {
+                                                    margin-bottom: 5%;
+                                                }
                                             }                             
                                         }
                                         img {
@@ -399,12 +544,18 @@ body {
                                             font-size: 6.5vw;
                                             font-weight: 700;
                                             letter-spacing: 0.07rem;
+                                            @include screen(t) {
+                                                font-size: 3.3vw;
+                                            }
                                         }
                                         .solution__subheading {
                                             font-size: 4.2vw;
-                                            font-weight: 5 00;
+                                            font-weight: 500;
                                             letter-spacing: 0.03rem;
                                             color: $subheading-gray;
+                                            @include screen(t) {
+                                                font-size: 2.1vw;
+                                            }
                                         }
                                         .solution__contents {
                                             font-weight: 300;
@@ -412,6 +563,9 @@ body {
                                             color: $subheading-gray;
                                             letter-spacing: 0.035rem;
                                             line-height: 1.6;
+                                            @include screen(t) {
+                                                font-size: 2.5vw;
+                                            }
                                         }
                                     }
                                 }
@@ -426,6 +580,11 @@ body {
                             margin: 0 auto;
                             font-size: 3.63vw;
                             padding: 13px 16px;
+                            @include screen(t) {
+                                font-size: 2vw;
+                                width: 25%;
+                                padding: 16px 32px;
+                            }
                             a {
                                 cursor: pointer;
                                 span {
@@ -439,16 +598,29 @@ body {
             }
         }
         .develop {
-            background-color: #F3F4F4;
+            background-color: $background-gray;
             padding: 15% 4%;
+            @include screen(t) {
+                padding: 12.5% 3.125%;
+            }
             .develop-wrapper {
                 .develop-contents-wrapper {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
                     .develop__image {
+                        @include screen(t) {
+                            max-width: 50%;
+                        }
                         img {
                             width: 100%;
-                            height: auto;
+                            height: 100%;
                             border-top-left-radius: 16px;
                             border-top-right-radius: 16px;
+                            @include screen(t) {
+                                border-top-right-radius: 0px;
+                                border-bottom-left-radius: 16px;
+                            }
                         }
                     }
                     .develop__card {
@@ -456,12 +628,22 @@ body {
                         background-color: white;
                         border-bottom-left-radius: 16px;
                         border-bottom-right-radius: 16px;
+                        @include screen(t) {
+                            padding: 3.334% 4.445% 5.556% 4.445%;
+                            max-width: 50%;
+                            border-bottom-left-radius: 0px;
+                            border-top-right-radius: 16px;
+                        }
                         .develop__card--heading {
                             font-size: 8.5vw;
                             font-weight: 600;
                             letter-spacing: 0.06rem;
                             line-height: 1.15;
                             margin-bottom: 3%;
+                            @include screen(t) {
+                                font-size: 5.1vw;
+                                line-height: 1.2;
+                            }
                         }
                         .develop__card--subheading {
                             font-size: 4.125vw;
@@ -470,8 +652,15 @@ body {
                             letter-spacing: 0.03rem;
                             color: $subheading-gray;
                             margin-bottom: 15%;
+                            @include screen(t) {
+                                font-size: 2.3vw;
+                                font-weight: 400;
+                                margin-bottom: 7.5%;
+                            }
                         }
                         .develop__card--link {
+                            display: flex;
+                            flex-direction: column;
                             color: $signiture-red;
                             .link {
                                 position: relative;
@@ -479,6 +668,9 @@ body {
                                 letter-spacing: 0.02rem;
                                 &:hover > .link__arrow-wrapper > .link__arrow {
                                     left: 0px;
+                                }
+                                @include screen(t) {
+                                    font-size: 2.05vw;
                                 }
                                 .link__arrow-wrapper {
                                     overflow: hidden;
@@ -502,14 +694,21 @@ body {
         .partners {
             background-color: #F3F4F4;
             padding: 20% 0%;
+            text-align: center;
+            @include screen(t) {
+                padding: 10% 0%;
+            }
             .partners__heading {
-                text-align: center;
                 font-size: 8.38vw;
                 font-weight: 600;
                 letter-spacing: 0.05rem;
                 line-height: 1.1;
                 padding: 0% 5% 0% 5%;
                 margin-bottom: 10.5%;
+                @include screen(t) {
+                    font-size: 5.3vw;
+                    margin-bottom: 6.3%;
+                }
             }
             .partners__logo-wrapper {
                 padding: 0% 5%;
@@ -543,6 +742,9 @@ body {
                                 width: 5%;
                                 height: auto;
                                 border-radius: 6px;
+                                @include screen(t) {
+                                    width: 5.11%;
+                                }
                                 img {
                                     width: 100%;
                                     height: auto;
@@ -554,6 +756,9 @@ body {
                 .partners__divider-wrapper {
                     .partners__divider {
                         opacity: 0.3;
+                        @include screen(t) {
+                            opacity: 0.4;
+                        }
                     }
                 }
             }
@@ -562,6 +767,10 @@ body {
 }
 .news-letter-section {
     padding: 15% 4%;
+    background-color: $news-letter-background-gray;
+    @include screen(t) {
+        padding: 7.5% 3%;
+    }
     .news-letter-wrapper {
         .news-letter {
             .news-letter__heading {
@@ -570,9 +779,19 @@ body {
                 letter-spacing: 0.04rem;
                 line-height: 1.2;
                 text-align: center;
+                @include screen(t) {
+                    font-size: 3.9vw;
+                    letter-spacing: 0.02rem;
+                }
             }
             .news-letter__body {
                 color: $non-activated-font-gray;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                @include screen(t) {
+                    flex-direction: row;
+                }
                 input {
                     width: 100%;
                     height: 100%;
@@ -587,12 +806,22 @@ body {
                     top: 50%;
                     transform: translateY(-50%);
                     transition: top 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+                    @include screen(t) {
+                        font-size: 2.2vw;
+                        top: 68%;
+                    }
                 }
                 .news-letter__body--email {
                     margin-top: 15.5%;
                     position: relative;
                     min-height: 5vh;
                     border-bottom: 1.67px solid $non-activated-gray;
+                    @include screen(t) {
+                        max-width: 30%;
+                        margin-right: 24px;
+                        flex-basis: 30%;
+                        margin-top: 4%;
+                    }
                     input:focus + label {
                         top:0;
                         font-size: 3vw;
@@ -604,6 +833,12 @@ body {
                     position: relative;
                     min-height: 5vh;
                     border-bottom: 1.67px solid $non-activated-gray;
+                    @include screen(t) {
+                        flex-basis: 30%;
+                        max-width: 30%;
+                        margin-right: 24px;
+                        margin-top: 4%;
+                    }
                     input:focus + label {
                         top:0;
                         font-size: 3vw;
@@ -615,13 +850,25 @@ body {
                     position: relative;
                     min-height: 3.5vh;
                     border-bottom: 1.67px solid $non-activated-gray;
+                    @include screen(t) {
+                        flex-basis: 30%;
+                        max-width: 30%;
+                        margin-top: 4%;
+                    }
                     select {
                         width: 100%;
+                        position: absolute;
                         appearance: none;
                         font-size: 4.5vw;
                         font-family: 'Roboto', sans-serif;
                         font-weight: 300;
                         color: $non-activated-font-gray;
+                        z-index: 1;
+                        @include screen(t) {
+                            font-size: 2vw;
+                            top: 50%;
+                            letter-spacing: 0.02rem;
+                        }
                         & > option {
                             color: black;
                         }
@@ -631,24 +878,37 @@ body {
                         height: auto;
                         color: black;
                         position: absolute;
-                        right: 0;
+                        right: 1%;
                         bottom: 30%;
-                        z-index: -1;
+                        @include screen(t) {
+                            width: 7%;
+                            right: 2.5%;
+                            top: 50%;
+                        }
                     }
                 }
                 .news-letter__body--explanation {
                     margin-top: 15.5%;
+                    @include screen (t) {
+                        margin-top: 4%;
+                    }
                     p {
                         font-size: 3.82vw;
                         font-weight: 300;
                         color: $footer-gray;
                         line-height: 1.5;
                         letter-spacing: 0.005rem;
+                        @include screen(t) {
+                            font-size: 1.8vw;
+                        }
                     }
                 }
                 .news-letter__body--submit {
                     margin-top: 10%;
                     text-align: center;
+                    @include screen(t) {
+                        margin: 4.5% auto 0% auto;
+                    }
                     button {
                         @include button();
                         opacity: 0.6;
@@ -657,6 +917,11 @@ body {
                         font-weight: 600;
                         letter-spacing: 0.02rem;
                         padding: 13.5px 43px;
+                        @include screen(t) {
+                            font-size: 2vw;
+                            padding: 16px 41.5px;
+                            font-weight: 600;
+                        }
                     }
                 }
             }
@@ -674,17 +939,46 @@ body {
         .accordion {
             .accordion__item {
                 border-bottom: 0.75px solid $non-activated-gray;
+                display: flex;
+                flex-direction: column;
                 .accordion__item--heading {
                     display: block;
                     position: relative;
                     padding-top: 7%;
                     padding-bottom: 7%;
-                    svg {
+                    .accordion__arrow--down {
                         transform: rotateX(180deg);
                         width: 4.3%;
                         height: auto;
                         position: absolute;
                         right: 2.5%;
+                    }
+                    .accordion__arrow--up {
+                        width: 4.3%;
+                        height: auto;
+                        position: absolute;
+                        right: 2.5%;
+                    }
+                }
+                .accordion__item--linklist-hidden {
+                    margin-left: 5%;
+                    margin-top: 2%;
+                    display: none;
+                    .accordion__item--link {
+                        font-size: 3.8vw;
+                        font-weight: 300;
+                        letter-spacing: 0.02rem;
+                        margin-bottom: 5.8%;
+                    }
+                }
+                .accordion__item--linklist {
+                    margin-left: 5%;
+                    margin-top: 2%;
+                    .accordion__item--link {
+                        font-size: 3.8vw;
+                        font-weight: 300;
+                        letter-spacing: 0.02rem;
+                        margin-bottom: 5.8%;
                     }
                 }
             }
