@@ -963,7 +963,9 @@ body {
                 .accordion__item--linklist-hidden {
                     margin-left: 5%;
                     margin-top: 2%;
-                    display: none;
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.2s ease 0s;
                     .accordion__item--link {
                         font-size: 3.8vw;
                         font-weight: 300;
@@ -974,6 +976,8 @@ body {
                 .accordion__item--linklist {
                     margin-left: 5%;
                     margin-top: 2%;
+                    max-height: 139px;
+                    transition: max-height 0.2s ease 0s;
                     .accordion__item--link {
                         font-size: 3.8vw;
                         font-weight: 300;
