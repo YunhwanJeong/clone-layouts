@@ -934,9 +934,12 @@ body {
         font-size: 3.8vw;
         font-weight: 500;
         color: #4A4A4A;
-        margin-left: 4%;
-        margin-right: 4%;
+        max-width: 1272px;
+        width: calc(100% - 32px);
+        margin: 0px auto;
         .accordion {
+            display: grid;
+            grid-template-columns: 1fr;
             .accordion__item {
                 border-bottom: 0.75px solid $non-activated-gray;
                 display: flex;
@@ -962,7 +965,6 @@ body {
                 }
                 .accordion__item--linklist-hidden {
                     margin-left: 5%;
-                    margin-top: 2%;
                     max-height: 0;
                     overflow: hidden;
                     transition: max-height 0.2s ease 0s;
@@ -975,7 +977,6 @@ body {
                 }
                 .accordion__item--linklist {
                     margin-left: 5%;
-                    margin-top: 2%;
                     max-height: 171px;
                     transition: max-height 0.2s ease 0s;
                     .accordion__item--link {
