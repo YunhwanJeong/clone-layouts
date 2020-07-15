@@ -432,6 +432,7 @@ body {
         .enterprise-solutions {
             background-color: $background-gray;
             .enterprise-solutions__intro {
+                min-height: 86.5vh;
                 background-color: $signiture-red;
                 padding: 0% 5%;
                 text-align: left;
