@@ -815,13 +815,13 @@
                             Copyright © 2018 - 2020 Magic Leap, Inc.
                         </div>
                         <div class="company-info__language-select">
+                            <svg viewBox="0 0 64 64">
+                                <path d="M36.2 40.7l16-15.7c1.2-1.1 1.1-3 0-4.1-1.2-1.1-3-1.1-4.2 0L32 36.6 16 20.9c-1.2-1.1-3-1.1-4.2 0-1.2 1.1-1.1 3 0 4.1l16 15.7 2.8 2.7c.8.8 2 .8 2.8 0l2.8-2.7z"></path>
+                            </svg>
                             <select>
                                 <option selected value="en-us">US English</option>
                                 <option value="ja-jp">日本語</option>
                             </select>
-                            <svg viewBox="0 0 64 64">
-                                <path d="M36.2 40.7l16-15.7c1.2-1.1 1.1-3 0-4.1-1.2-1.1-3-1.1-4.2 0L32 36.6 16 20.9c-1.2-1.1-3-1.1-4.2 0-1.2 1.1-1.1 3 0 4.1l16 15.7 2.8 2.7c.8.8 2 .8 2.8 0l2.8-2.7z"></path>
-                            </svg>
                         </div>
                     </div>
                 </div>
@@ -870,7 +870,7 @@
         var showAccordionLinklist = function (e) {
             var footerAccordionArrow = this;
             var footerAccordionLinklist = this.parentNode.nextSibling.nextSibling;
-            
+
             if (footerAccordionLinklist.className === 'accordion__item--linklist-hidden') {
                 footerAccordionLinklist.className = 'accordion__item--linklist';
                 footerAccordionArrow.className.baseVal = 'accordion__arrow--up';

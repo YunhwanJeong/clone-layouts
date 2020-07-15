@@ -827,6 +827,9 @@ body {
                         top:0;
                         font-size: 3vw;
                         color: $activated-gray;
+                        @include screen(t) {
+                            font-size: 1.6vw;
+                        }
                     }
                 }
                 .news-letter__body--name {
@@ -844,6 +847,9 @@ body {
                         top:0;
                         font-size: 3vw;
                         color: $activated-gray;
+                        @include screen(t) {
+                            font-size: 1.6vw;
+                        }
                     }
                 }
                 .news-letter__body--interest {
@@ -941,21 +947,36 @@ body {
         .accordion {
             display: grid;
             grid-template-columns: 1fr;
+            @include screen(t) {
+                grid-template-columns: 1fr 1fr;
+                column-gap: 24px;
+                padding-top: 32px;
+            }
             .accordion__item {
                 border-bottom: 0.75px solid $non-activated-gray;
                 display: flex;
                 flex-direction: column;
+                @include screen(t) {
+                    border-bottom: none;
+                }
                 .accordion__item--heading {
                     display: block;
                     position: relative;
                     padding-top: 7%;
                     padding-bottom: 7%;
+                    @include screen(t) {
+                        font-size: 1.8vw;
+                        letter-spacing: 0.03rem;
+                    }
                     .accordion__arrow--down {
                         transform: rotateX(180deg);
                         width: 4.3%;
                         height: auto;
                         position: absolute;
                         right: 2.5%;
+                        @include screen(t, pc) {
+                            display: none;
+                        }
                     }
                     .accordion__arrow--up {
                         width: 4.3%;
@@ -969,11 +990,20 @@ body {
                     max-height: 0;
                     overflow: hidden;
                     transition: max-height 0.2s ease 0s;
+                    @include screen(t) {
+                        max-height: none;
+                        overflow: visible;
+                        margin-left: 0;
+                    }
                     .accordion__item--link {
                         font-size: 3.8vw;
                         font-weight: 300;
                         letter-spacing: 0.02rem;
                         margin-bottom: 5.8%;
+                        @include screen(t) {
+                            font-size: 1.8vw;
+                            letter-spacing: 0.03rem;
+                        }
                     }
                 }
                 .accordion__item--linklist {
@@ -991,9 +1021,18 @@ body {
             .follow-links {
                 text-align: center;
                 padding-bottom: 9%;
+                @include screen(t) {
+                    text-align: unset;
+                    padding-bottom: 0;
+                }
                 .follow-links__heading {
                     padding-top: 8%;
                     padding-bottom: 5.7%;
+                    @include screen(t) {
+                        padding-top: 7%;
+                        padding-bottom: 7%;
+                        font-size: 1.8vw;
+                    }
                 }
                 .follow-links__link {
                     color: $link-gray;
@@ -1015,6 +1054,10 @@ body {
     .footer__bottom {
         background-color: $footer-bottom-gray;
         font-size: 3.64vw;
+        @include screen(t) {
+            min-height: 50vh;
+            font-size: 2vw;
+        }
         .footer__bottom--wrapper {
             margin-left: 4%;
             margin-right: 4%;
@@ -1054,6 +1097,9 @@ body {
                 padding-top: 5%;
                 letter-spacing: 0.02rem;
                 line-height: 1.5;
+                @include screen(t) {
+                    font-size: 2vw;
+                }
                 .company-info__love {
                     order: 2;
                     text-align: center;
@@ -1070,8 +1116,20 @@ body {
                 .company-info__language-select {
                     position: relative;
                     order: 1;
-                    text-align: center;
+                    justify-self: center;
+                    max-width: 104px;
+                    width: 100%;
+                    background-color: transparent;
+                    svg {
+                        position: absolute;
+                        right: 0;
+                        top: 15%;
+                        width: 15px;
+                        height: 15px;
+                    }
                     select {
+                        display: block;
+                        width: 100%;
                         overflow: hidden;
                         appearance: none;
                         color: $link-gray;
@@ -1079,14 +1137,11 @@ body {
                         font-weight: 300;
                         font-family: 'Roboto', sans-serif;
                         line-height: 1.2;
-                        margin-right: 30px;
-                    }
-                    svg {
-                        position: absolute;
-                        left: 58.5%;
-                        top:15%;
-                        width: 15px;
-                        height: 15px;
+                        background-color: transparent;
+                        transform: translate3d(0px, 0px, 0px);
+                        @include screen(t) {
+                            font-size: 2.5vw;
+                        }
                     }
                 }
             }
