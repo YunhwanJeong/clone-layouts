@@ -18,6 +18,7 @@ body {
     top: 0px;
     background-color: transparent;
     z-index: 1000;
+    transition: background-color 0.5s cubic-bezier(0.175, 0.885, 0.25, 1.45);
 }
 .outer-header-white {
     width: 100%;
@@ -27,6 +28,7 @@ body {
     background-color: white;
     border-bottom: 0.5px solid $non-activated-gray;
     z-index: 1000;
+    transition: background-color 0.5s cubic-bezier(0.175, 0.885, 0.25, 1.45);
 }
 .inner-header {
     width: 100%;
@@ -39,6 +41,7 @@ body {
         padding-right: 24px;
     }
     .inner-header__branding-wrapper {
+        z-index: 1;
         height: 100%;
         display: flex;
         align-items: center;
@@ -49,12 +52,64 @@ body {
         }
         .inner-header__branding-svg--top {
             fill: white;
+            transition: fill 0.5s cubic-bezier(0.175, 0.885, 0.25, 1.45);
         }
         .inner-header__branding-svg--not-top {
             fill: $signiture-red;
+            transition: fill 0.5s cubic-bezier(0.175, 0.885, 0.25, 1.45);
+        }
+    }
+    .inner-header__nav {
+        visibility: hidden;
+        position: absolute;
+        background-color: transparent;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        padding: 64px 16px 16px;
+        transition-property: visibility, background-color;
+        transition-duration: 0.5s;
+        transition-timing-function: cubic-bezier(0.175, 0.885, 0.25, 1.45);
+        .nav-container {
+            .nav-container__item {
+                a {
+                    color: transparent;
+                    display: block;
+                    font-size: 3.8vw;
+                    font-weight: 300;
+                    letter-spacing: 0.03rem;
+                    padding: 16px 0;
+                }
+            }
+        }
+    }
+    .inner-header__nav--open {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        padding: 64px 16px 16px;
+        background-color: white;
+        transition: background-color 0.5s cubic-bezier(0.175, 0.885, 0.25, 1.45);
+        .nav-container {
+            .nav-container__item {
+                a {
+                    color: $subheading-gray;
+                    display: block;
+                    font-size: 3.815vw;
+                    font-weight: 300;
+                    letter-spacing: 0.01rem;
+                    padding: 19.2px 0;
+                    transition: color 0.5s cubic-bezier(0.175, 0.885, 0.25, 1.45);
+                    @include screen(t) {
+                        font-size: 1.85vw;
+                    }
+                }
+            }
         }
     }
     .inner-header__kit {
+        z-index: 1;
         height: 100%;
         margin: auto 0px;
         display: flex;
@@ -69,6 +124,8 @@ body {
             padding: 9px 18px;
             letter-spacing: 0.03rem;
             background-color: white;
+            transition: background-color 0.5s cubic-bezier(0.175, 0.885, 0.25, 1.45),
+                        color 0.5s cubic-bezier(0.175, 0.885, 0.25, 1.45);
         }
         .inner-header__kit--shop-button-red {
             color: white;
@@ -81,6 +138,8 @@ body {
             padding: 9px 18px;
             letter-spacing: 0.03rem;
             background-color: $signiture-red;
+            transition: background-color 0.5s cubic-bezier(0.175, 0.885, 0.25, 1.45),
+                        color 0.5s cubic-bezier(0.175, 0.885, 0.25, 1.45);
         }
         .inner-header__kit--toggle-button {
             cursor: pointer;
@@ -90,29 +149,103 @@ body {
                 width: 24px;
                 height: 100%;
                 position: relative;
-                .hamburger__line {
+                .hamburger__above-line {
                     position: absolute;
-                    &:nth-child(1) {
-                        top: 35.5%;
-                        width: 100%;
-                        height: 5px;
-                        left: 0px;
-                        @include screen(t) {
-                            top: 37%;
-                        }
+                    top: 35.5%;
+                    width: 100%;
+                    height: 5px;
+                    left: 0px;
+                    stroke: white;
+                    @include screen(t) {
+                        top: 37%;
                     }
-                    &:nth-child(2) {
-                        top: 56%;
-                        width: 100%;
-                        height: 5px;
-                        left: 0px;
-                        @include screen(t) {
-                            top: 54%;
-                        }
+                }
+                .hamburger__above-line--black {
+                    position: absolute;
+                    top: 35.5%;
+                    width: 100%;
+                    height: 5px;
+                    left: 0px;
+                    stroke: black;
+                    @include screen(t) {
+                        top: 37%;
+                    }
+                }
+                .hamburger__above-line--cross {
+                    position: absolute;
+                    top: 45%;
+                    width: 100%;
+                    height: 5px;
+                    left: 0px;
+                    stroke: black;
+                    transform: rotate(45deg);
+                    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.25, 1.45) 0.2s,
+                                stroke 0.2s cubic-bezier(0.175, 0.885, 0.25, 1.45) 0.2s,
+                                top 0.2s cubic-bezier(0.175, 0.885, 0.25, 1.45) 0.2s;
+                    @include screen(t) {
+                        top: 45%;
+                    }
+                }
+                .hamburger__bottom-line {
+                    position: absolute;
+                    top: 56%;
+                    width: 100%;
+                    height: 5px;
+                    left: 0px;
+                    stroke: white;
+                    @include screen(t) {
+                        top: 54%;
+                    }
+                }
+                .hamburger__bottom-line--black {
+                    position: absolute;
+                    top: 56%;
+                    width: 100%;
+                    height: 5px;
+                    left: 0px;
+                    stroke: black;
+                    @include screen(t) {
+                        top: 54%;
+                    }
+                }
+                .hamburger__bottom-line--cross {
+                    position: absolute;
+                    top: 45%;
+                    width: 100%;
+                    height: 5px;
+                    left: 0px;
+                    stroke: black;
+                    transform: rotate(-45deg);
+                    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.25, 1.45) 0.2s,
+                                stroke 0.2s cubic-bezier(0.175, 0.885, 0.25, 1.45) 0.2s,
+                                top 0.2s cubic-bezier(0.175, 0.885, 0.25, 1.45) 0.2s;
+                    @include screen(t) {
+                        top: 45%;
                     }
                 }
             }
         }
+    }
+    .mask {
+        background-color: $mask-black;
+        opacity: 0;
+        z-index: -2;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+    .mask-open {
+        background-color: $mask-black;
+        opacity: 1;
+        z-index: -2;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        transition: opacity 0.2s ease 0s;
     }
 }
 
