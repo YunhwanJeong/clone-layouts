@@ -13,22 +13,35 @@ body {
 
 .outer-header-transparent {
     width: 100%;
-    height: 5.912vh;
+    height: 48px;
     position: fixed;
     top: 0px;
     background-color: transparent;
+    border-bottom: 0.5px solid transparent;
     z-index: 1000;
     transition: background-color 0.5s cubic-bezier(0.175, 0.885, 0.25, 1.45);
+    @include screen(t) {
+        height: 56px;
+    }
+    @include screen(pc) {
+        height: 62px;
+    }
 }
 .outer-header-white {
     width: 100%;
-    height: 5.912vh;
+    height: 48px;
     position: fixed;
     top: 0px;
     background-color: white;
     border-bottom: 0.5px solid $non-activated-gray;
     z-index: 1000;
     transition: background-color 0.5s cubic-bezier(0.175, 0.885, 0.25, 1.45);
+    @include screen(t, pc) {
+        height: 56px;
+    }
+    @include screen(pc) {
+        height: 62px;
+    }
 }
 .inner-header {
     width: 100%;
@@ -36,27 +49,42 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include screen(t) {
-        height: 56px;
-        padding-right: 24px;
+    @include screen(t, pc) {
+        padding-right: 25px;
     }
     .inner-header__branding-wrapper {
         z-index: 1;
+        width: auto;
         height: 100%;
         display: flex;
         align-items: center;
         cursor: pointer;
         padding: 0px 8px 0px 16px;
-        @include screen(t, pc) {
+        @include screen(t) {
             padding: 0px 8px 0px 24px;
+        }
+        @include screen(pc) {
+            padding: 0px 8px 0px 25.95px;
         }
         .inner-header__branding-svg--top {
             fill: white;
+            width: 148px;
+            height: 24px;
             transition: fill 0.5s cubic-bezier(0.175, 0.885, 0.25, 1.45);
+            @include screen(pc) {
+                width: 164.65px;
+                height: 28.9px;
+            }
         }
         .inner-header__branding-svg--not-top {
             fill: $signiture-red;
+            width: 148px;
+            height: 24px;
             transition: fill 0.5s cubic-bezier(0.175, 0.885, 0.25, 1.45);
+            @include screen(pc) {
+                width: 164.65px;
+                height: 28.9px;
+            }
         }
     }
     .inner-header__nav {
@@ -70,8 +98,28 @@ body {
         transition-property: visibility, background-color;
         transition-duration: 0.5s;
         transition-timing-function: cubic-bezier(0.175, 0.885, 0.25, 1.45);
+        @include screen(pc) {
+            visibility: visible;
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0px 0px 0px 16px;
+            transition: none 0s ease 0s;
+        }
         .nav-container {
+            @include screen(pc) {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+            }
             .nav-container__item {
+                @include screen(pc) {
+                    &:not(:first-child) {
+                        margin-left: 3.65%;
+                    }
+                }
                 a {
                     color: transparent;
                     display: block;
@@ -79,6 +127,11 @@ body {
                     font-weight: 300;
                     letter-spacing: 0.03rem;
                     padding: 16px 0;
+                    @include screen(pc) {
+                        color: white;
+                        font-size: 15.25px;
+                        font-weight: 400;
+                    }
                 }
             }
         }
@@ -108,6 +161,60 @@ body {
             }
         }
     }
+    .inner-header__nav--pc-color-black {
+        visibility: hidden;
+        position: absolute;
+        background-color: transparent;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        padding: 64px 16px 16px;
+        transition-property: visibility, background-color;
+        transition-duration: 0.5s;
+        transition-timing-function: cubic-bezier(0.175, 0.885, 0.25, 1.45);
+        @include screen(pc) {
+            visibility: visible;
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0px 0px 0px 16px;
+            transition: none 0s ease 0s;
+        }
+        .nav-container {
+            @include screen(pc) {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+            .nav-container__item {
+                @include screen(pc) {
+                    &:not(:first-child) {
+                        margin-left: 3.65%;
+                    }
+                }
+                a {
+                    color: transparent;
+                    display: block;
+                    font-size: 3.8vw;
+                    font-weight: 300;
+                    letter-spacing: 0.03rem;
+                    padding: 16px 0;
+                    @include screen(pc) {
+                        color: $nav-black;
+                        font-size: 15.25px;
+                        font-weight: 400;
+                        opacity: 1;
+                        transition: opacity 0.2s ease 0s;
+                        &:hover {
+                            opacity: 0.5;
+                        }
+                    }
+                }
+            }
+        }
+    }
     .inner-header__kit {
         z-index: 1;
         height: 100%;
@@ -124,8 +231,15 @@ body {
             padding: 9px 18px;
             letter-spacing: 0.03rem;
             background-color: white;
-            transition: background-color 0.5s cubic-bezier(0.175, 0.885, 0.25, 1.45),
-                        color 0.5s cubic-bezier(0.175, 0.885, 0.25, 1.45);
+            transition-property: background-color, color;
+            transition-duration: 0.5s;
+            transition-timing-function: cubic-bezier(0.175, 0.885, 0.25, 1.45);
+            @include screen(pc) {
+                font-size: 15px;
+                padding: 10px 20px;
+                letter-spacing: 0.05rem;
+                margin-left: 34px;
+            }
         }
         .inner-header__kit--shop-button-red {
             color: white;
@@ -138,13 +252,23 @@ body {
             padding: 9px 18px;
             letter-spacing: 0.03rem;
             background-color: $signiture-red;
-            transition: background-color 0.5s cubic-bezier(0.175, 0.885, 0.25, 1.45),
-                        color 0.5s cubic-bezier(0.175, 0.885, 0.25, 1.45);
+            transition-property: background-color, color;
+            transition-duration: 0.5s;
+            transition-timing-function: cubic-bezier(0.175, 0.885, 0.25, 1.45);
+            @include screen(pc) {
+                font-size: 15px;
+                padding: 10px 20px;
+                letter-spacing: 0.05rem;
+                margin-left: 34px;
+            }
         }
         .inner-header__kit--toggle-button {
             cursor: pointer;
             padding: 0px 16px;
             height: 100%;
+            @include screen(pc) {
+                display: none;
+            }
             .hamburger {
                 width: 24px;
                 height: 100%;
