@@ -1734,14 +1734,14 @@ body {
                         overflow: hidden;
                         appearance: none;
                         color: $link-gray;
-                        font-size: 4.35vw;
+                        font-size: clamp(10px, 4.35vw, 18px);
                         font-weight: 300;
                         font-family: 'Roboto', sans-serif;
                         line-height: 1.2;
                         background-color: transparent;
                         transform: translate3d(0px, 0px, 0px);
                         @include screen(t) {
-                            font-size: 2.5vw;
+                            font-size: clamp(12px, 2.5vw, 18px);
                         }
                         @include screen(pc) {
                             font-size: clamp(10px, 1.4vw, 14px);
