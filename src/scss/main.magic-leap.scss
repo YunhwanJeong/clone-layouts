@@ -44,7 +44,8 @@ body {
     }
 }
 .inner-header {
-    width: 100%;
+    max-width: 1490px;
+    margin: 0 auto;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -117,7 +118,7 @@ body {
             .nav-container__item {
                 @include screen(pc) {
                     &:not(:first-child) {
-                        margin-left: 3.65%;
+                        margin-left: 25px;
                     }
                 }
                 a {
@@ -129,7 +130,7 @@ body {
                     padding: 16px 0;
                     @include screen(pc) {
                         color: white;
-                        font-size: 15.25px;
+                        font-size: 13.5px;
                         font-weight: 400;
                     }
                 }
@@ -191,7 +192,7 @@ body {
             .nav-container__item {
                 @include screen(pc) {
                     &:not(:first-child) {
-                        margin-left: 3.65%;
+                        margin-left: 25px;
                     }
                 }
                 a {
@@ -203,7 +204,7 @@ body {
                     padding: 16px 0;
                     @include screen(pc) {
                         color: $nav-black;
-                        font-size: 15.25px;
+                        font-size: 13.5px;
                         font-weight: 400;
                         opacity: 1;
                         transition: opacity 0.2s ease 0s;
@@ -225,7 +226,7 @@ body {
             font-size: 14px;
             font-weight: 500;
             display: inline-block;
-            margin-left: 32px;
+            margin-left: 30px;
             cursor: pointer;
             border-radius: 9999px;
             padding: 9px 18px;
@@ -235,7 +236,7 @@ body {
             transition-duration: 0.5s;
             transition-timing-function: cubic-bezier(0.175, 0.885, 0.25, 1.45);
             @include screen(pc) {
-                font-size: 15px;
+                font-size: 13px;
                 padding: 10px 20px;
                 letter-spacing: 0.05rem;
                 margin-left: 34px;
@@ -246,7 +247,7 @@ body {
             font-size: 14px;
             font-weight: 500;
             display: inline-block;
-            margin-left: 32px;
+            margin-left: 30px;
             cursor: pointer;
             border-radius: 9999px;
             padding: 9px 18px;
@@ -256,7 +257,7 @@ body {
             transition-duration: 0.5s;
             transition-timing-function: cubic-bezier(0.175, 0.885, 0.25, 1.45);
             @include screen(pc) {
-                font-size: 15px;
+                font-size: 13px;
                 padding: 10px 20px;
                 letter-spacing: 0.05rem;
                 margin-left: 34px;
@@ -408,6 +409,8 @@ body {
                         justify-content: center;
                         align-items: center;
                         text-align: center;
+                        max-width: 1440px;
+                        margin: 0 auto;
                         @include screen(pc) {
                             align-items: flex-start;
                             text-align: left;
@@ -427,7 +430,7 @@ body {
                                 line-height: 1.125;
                             }
                             @include screen(pc) {
-                                font-size: 6.5vw;
+                                font-size: clamp(65px, 6.5vw, 70px);
                                 margin-bottom: 1%;
                                 line-height: 1.15;
                             }
@@ -446,7 +449,7 @@ body {
                                 line-height: 1.3;
                             }
                             @include screen(pc) {
-                                font-size: 2.35vw;
+                                font-size: clamp(20px, 2.35vw, 27.5px);
                                 max-width: 35%;
                                 margin-bottom: 1%;
                                 letter-spacing: 0.05rem;
@@ -465,7 +468,7 @@ body {
                                     }
                                     @include screen(pc) {
                                         padding: 16px 38px;
-                                        font-size: 1.5vw;
+                                        font-size: clamp(10px, 1.5vw, 17.5px);
                                     }
                                 }
                             }
@@ -498,17 +501,21 @@ body {
                 }
                 @include screen(pc) {
                     display: flex;
-                    margin: 11.436% 2.412%;
+                    justify-content: center;
+                    align-items: center;
+                    min-width: 100%;
+                    margin: 128px 24px;
                 }
                 .device-intro__image {
                     max-width: 100%;
+                    max-width: 600px;
                     height: auto;
                     @include screen(t) {
                         max-width: 69.445%;
                         margin: 0 auto;
                     }
                     @include screen(pc) {
-                        max-width: 50%;
+                        max-width: 700px;
                         flex-basis: 50%;
                     }
                     img {
@@ -522,7 +529,7 @@ body {
                     color: white;
                     margin: 5% 7%;
                     @include screen(pc) {
-                        max-width: 50%;
+                        max-width: 700px;
                         flex-basis: 50%;
                         margin: 0;
                     }
@@ -543,7 +550,7 @@ body {
                                 margin-bottom: 3.5%;
                             }
                             @include screen(pc) {
-                                font-size: 5vw;
+                                font-size: clamp(40px, 5vw, 62.5px);
                             }
                         }
                         p {
@@ -556,7 +563,7 @@ body {
                                 margin: 0 auto;
                             }
                             @include screen(pc) {
-                                font-size: 1.9vw;
+                                font-size: clamp(20px, 1.9vw, 21px);
                             }
                         }
                     }
@@ -567,6 +574,9 @@ body {
             padding: 17.054% 4.263%;
             @include screen(t) {
                 padding: 12.5% 3.125%;
+            }
+            @include screen(pc) {
+                padding: 158px 24px;
             }
             .product-intro__heading {
                 font-size: 9.5vw;
@@ -581,9 +591,9 @@ body {
                     margin-bottom: 8.89%;
                 }
                 @include screen(pc) {
-                    font-size: 5.8vw;
+                    font-size: clamp(50px, 5.8vw, 60px);
                     letter-spacing: 0.04rem;
-                    margin-bottom: 10%;
+                    margin-bottom: 50px;
                 }
             }
             .product-intro__contents {
@@ -593,18 +603,19 @@ body {
                         margin-bottom: 10%;
                     }
                     @include screen(pc) {
-                        margin-bottom: 15%;
+                        margin-bottom: 100px;
                     }
                 }
                 .not-vr {
                     text-align: center;
                     .not-vr__image {
                         margin-bottom: 10%;
+                        max-width: 1200px;
                         @include screen(t) {
                             margin-bottom: 5%;
                         }
                         @include screen(pc) {
-                            margin-bottom: 6%;
+                            margin: 0 auto 40px;
                         }
                         img {
                             border-radius: 16px;
@@ -630,9 +641,8 @@ body {
                                 margin-bottom: 3%;
                             }
                             @include screen(pc) {
-                                font-size: 4.8vw;
-                                margin-bottom: 3%;
-                                margin-bottom: 2%;
+                                font-size: clamp(40px, 4.8vw, 48px);
+                                margin-bottom: 15px;
                             }
                         }
                         .not-vr__contents--subheading {
@@ -648,8 +658,9 @@ body {
                                 max-width: 70%;
                             }
                             @include screen(pc) {
-                                font-size: 1.8vw;
-                                max-width: 50%;
+                                font-size: clamp(14px, 1.8vw, 19px);
+                                width: 50%;
+                                max-width: 550px;
                             }
                         }
                     }
@@ -658,15 +669,15 @@ body {
                     text-align: center;
                     .not-ar__image {
                         margin-bottom: 10%;
+                        max-width: 1210px;
                         @include screen(t) {
                             margin-bottom: 4%;
                         }
                         @include screen(pc) {
-                            margin-bottom: 5%;       
+                            margin: 0 auto 40px;
                         }
                         img {
                             border-radius: 16px;
-                            max-width: 100%;
                             width: 100%;
                             height: auto;
                             @include screen(t) {
@@ -689,9 +700,8 @@ body {
                                 margin-bottom: 3%;
                             }
                             @include screen(pc) {
-                                font-size: 4.8vw;
-                                margin-bottom: 3%;
-                                margin-bottom: 2%;
+                                font-size: clamp(40px, 4.8vw, 48px);
+                                margin-bottom: 15px;
                             }
                         }
                         .not-ar__contents--subheading {
@@ -707,8 +717,9 @@ body {
                                 max-width: 75%;
                             }
                             @include screen(pc) {
-                                font-size: 1.8vw;
-                                max-width: 62%;
+                                font-size: clamp(14px, 1.8vw, 19px);
+                                width: 50%;
+                                max-width: 600px;
                             }
                         }
                     }
@@ -717,11 +728,12 @@ body {
                     text-align: center;
                     .spatial-computer__image {
                         margin-bottom: 10%;
+                        max-width: 1220px;
                         @include screen(t) {
                             margin-bottom: 4%;
                         }
                         @include screen(pc) {
-                            margin-bottom: 5%;
+                            margin: 0 auto 40px;
                         }
                         img {
                             border-radius: 16px;
@@ -750,9 +762,8 @@ body {
                                 margin-bottom: 3%;
                             }
                             @include screen(pc) {
-                                font-size: 4.8vw;
-                                margin-bottom: 3%;
-                                margin-bottom: 2%;
+                                font-size: clamp(40px, 4.8vw, 48px);
+                                margin-bottom: 15px;
                             }
                         }
                         .spatial-computer__contents--subheading {
@@ -770,9 +781,9 @@ body {
                                 margin-bottom: 6%;
                             }
                             @include screen(pc) {
-                                font-size: 1.8vw;
-                                max-width: 62%;
-                                margin-bottom: 4%;
+                                font-size: clamp(14px, 1.8vw, 19px);
+                                max-width: 590px;
+                                margin-bottom: 30px;
                             }
                         }
                         .reverse-button {
@@ -788,7 +799,7 @@ body {
                                 padding: 14px 32px;
                             }
                             @include screen(pc) {
-                                font-size: 1.6vw;
+                                font-size: clamp(14px, 1.6vw, 18px);
                                 font-weight: 500;
                                 padding: 14px 36px;
                             }
@@ -813,11 +824,14 @@ body {
                 .enterprise-solutions__intro--wrapper {
                     padding-top: 5%;
                     color: white;
+                    max-width: 1250px;
+                    margin: 0 auto;
                     @include screen(t) {
                         padding-top: 3%;
                     }
                     @include screen(pc) {
-                        padding-top: 15%;
+                        padding-top: 128px;
+                        padding-bottom: 96px;
                         text-align: center;
                     }
                     .enterprise-solutions__intro--link {
@@ -840,7 +854,7 @@ body {
                         line-height: 1.125;
                         text-transform: uppercase;
                         @include screen(t, pc) {
-                            font-size: 6.3vw;
+                            font-size: clamp(45px, 6.3vw, 62.5px);
                             margin: 5% 1% 3% 1%;
                         }
                     }
@@ -857,7 +871,7 @@ body {
                             letter-spacing: 0.03rem;
                         }
                         @include screen(pc) {
-                            font-size: 2.5vw;
+                            font-size: clamp(15px, 2.5vw, 25px);
                             max-width: 85%;
                         }
                     }
@@ -867,6 +881,7 @@ body {
                 .enterprise-solutions__contents--wrapper {
                     padding: 8% 0%;
                     background-color: white;
+                    max-width: 1250px;
                     @include screen(t) {
                         width: 98%;
                         border-radius: 16px;
@@ -875,8 +890,8 @@ body {
                     @include screen(pc) {
                         width: 98%;
                         border-radius: 16px;
-                        margin: -6% auto 0 auto;
-                        padding: 6% 0%;
+                        margin: -64px auto 0 auto;
+                        padding: 64px 0px;
                     }
                     .explore-enterprise-solutions {
                         .explore-enterprise-solutions__heading {
@@ -896,13 +911,14 @@ body {
                                     font-size: 3.9vw;
                                 }
                                 @include screen(pc) {
-                                    font-size: 3.1vw;
+                                    font-size: clamp(20px, 3.1vw, 30px);
                                 }
                             }
                         }
                         .explore-enterprise-solutions__contents {
                             .explore-enterprise-solutions__contents--wrapper {
                                 display: flex;
+                                justify-content: center;
                                 flex-wrap: wrap;
                                 padding: 5% 1.5% 10% 1.5%;
                                 @include screen(pc) {
@@ -915,17 +931,21 @@ body {
                                     }
                                 }
                                 .solution {
+                                    &:first-child {
+                                        .solution-wrapper {
+                                            justify-content: flex-end;
+                                        }
+                                    }
                                     @include screen(pc) {
                                         width: 50%;
                                     }
                                     .solution-wrapper {
                                         display: flex;
-                                        margin-left: 1%;
-                                        margin-right: 1%;
                                         & > div {
                                             width: 50%;
                                             margin-left: 2%;
                                             margin-right: 2%;
+                                            max-width: 235px;
                                             & > *:not(:last-child) {
                                                 margin-bottom: 10%;
                                                 @include screen(t) {
@@ -946,7 +966,7 @@ body {
                                                 font-size: 3.3vw;
                                             }
                                             @include screen(pc) {
-                                                font-size: 2.4vw;
+                                                font-size: clamp(15px, 2.4vw, 25px);
                                             }
                                         }
                                         .solution__subheading {
@@ -958,7 +978,7 @@ body {
                                                 font-size: 2.1vw;
                                             }
                                             @include screen(pc) {
-                                                font-size: 1.5vw;
+                                                font-size: clamp(10px, 1.5vw, 16px);
                                             }
                                         }
                                         .solution__contents {
@@ -971,7 +991,7 @@ body {
                                                 font-size: 2.5vw;
                                             }
                                             @include screen(pc) {
-                                                font-size: 1.85vw;
+                                                font-size: clamp(12px, 1.85vw, 18px);
                                             }
                                         }
                                     }
@@ -983,17 +1003,18 @@ body {
                             border-radius: 9999px;
                             color: white;
                             width: 37.5%;
+                            max-width: 187px;
                             text-align: center;
                             margin: 0 auto;
-                            font-size: 3.63vw;
+                            font-size: clamp(8px, 3.63vw, 15px);
                             padding: 13px 16px;
                             @include screen(t) {
-                                font-size: 2vw;
+                                font-size: font-size(8px, 2vw, 15px);
                                 width: 25%;
                                 padding: 16px 32px;
                             }
                             @include screen(pc) {
-                                font-size: 1.5vw;
+                                font-size: clamp(10px, 1.5vw, 15px);
                                 width: 19%;
                                 padding: 16px 32px;
                             }
@@ -1017,13 +1038,16 @@ body {
             }
             .develop-wrapper {
                 .develop-contents-wrapper {
+                    max-width: 1100px;
                     display: flex;
                     flex-direction: row;
                     flex-wrap: wrap;
+                    justify-content: center;
                     @include screen(pc) {
-                        margin: 0% 7.5%;
+                        margin: 0 auto;
                     }
                     .develop__image {
+                        max-width: 516px;
                         @include screen(t, pc) {
                             max-width: 50%;
                         }
@@ -1040,6 +1064,7 @@ body {
                     }
                     .develop__card {
                         padding: 7% 7% 10% 7%;
+                        max-width: 516px;
                         background-color: white;
                         border-bottom-left-radius: 16px;
                         border-bottom-right-radius: 16px;
@@ -1050,7 +1075,7 @@ body {
                             border-top-right-radius: 16px;
                         }
                         @include screen(pc) {
-                            padding: 6% 5% 5% 5%;
+                            padding: 40px 35px 35px 40px;
                             max-width: 50%;
                             border-bottom-left-radius: 0px;
                             border-top-right-radius: 16px;
@@ -1066,7 +1091,7 @@ body {
                                 line-height: 1.2;
                             }
                             @include screen(pc) {
-                                font-size: 4.7vw;
+                                font-size: clamp(40px, 4.7vw, 50px);
                                 margin-bottom: 4%;
                                 line-height: 1.2;
                             }
@@ -1084,7 +1109,7 @@ body {
                                 margin-bottom: 7.5%;
                             }
                             @include screen(pc) {
-                                font-size: 1.85vw;
+                                font-size: clamp(10px, 1.85vw, 20px);
                                 font-weight: 400;
                                 margin-bottom: 7.5%;
                             }
@@ -1104,7 +1129,7 @@ body {
                                     font-size: 2.05vw;
                                 }
                                 @include screen(pc) {
-                                    font-size: 1.6vw;
+                                    font-size: clamp(8px, 1.6vw, 16px);
                                 }
                                 .link__arrow-wrapper {
                                     overflow: hidden;
@@ -1133,7 +1158,7 @@ body {
                 padding: 10% 0%;
             }
             @include screen(pc) {
-                padding: 12% 0%;
+                padding: 100px 0px;
             }
             .partners__heading {
                 font-size: 8.38vw;
@@ -1147,7 +1172,7 @@ body {
                     margin-bottom: 6.3%;
                 }
                 @include screen(pc) {
-                    font-size: 4.8vw;
+                    font-size: clamp(35px, 4.8vw, 45px);
                     margin-bottom: 6.3%;
                 }
             }
@@ -1216,6 +1241,8 @@ body {
         padding: 5% 2.5%;
     }
     .news-letter-wrapper {
+        max-width: 1260px;
+        margin: 0 auto;
         .news-letter {
             .news-letter__heading {
                 font-size: 6.3vw;
@@ -1228,7 +1255,7 @@ body {
                     letter-spacing: 0.02rem;
                 }
                 @include screen(pc) {
-                    font-size: 3.2vw;
+                    font-size: clamp(20px, 3.2vw, 30px);
                     letter-spacing: 0.02rem;
                     text-align: left;
                 }
@@ -1260,7 +1287,7 @@ body {
                         top: 68%;
                     }
                     @include screen(pc) {
-                        font-size: 1.6vw;
+                        font-size: clamp(10px, 1.6vw, 16px);
                         top: 66%;
                     }
                 }
@@ -1290,7 +1317,7 @@ body {
                             font-size: 1.6vw;
                         }
                         @include screen(pc) {
-                            font-size: 1.2vw;
+                            font-size: clamp(8px, 1.2vw, 12px);
                         }
                     }
                 }
@@ -1320,7 +1347,7 @@ body {
                             font-size: 1.6vw;
                         }
                         @include screen(pc) {
-                            font-size: 1.2vw;
+                            font-size: clamp(8px, 1.2vw, 12px);
                         }
                     }
                 }
@@ -1356,7 +1383,7 @@ body {
                             letter-spacing: 0.02rem;
                         }
                         @include screen(pc) {
-                            font-size: 1.6vw;
+                            font-size: clamp(10px, 1.6vw, 16px);
                             top: 50%;
                             letter-spacing: 0.02rem;
                         }
@@ -1397,7 +1424,7 @@ body {
                             font-size: 1.8vw;
                         }
                         @include screen(pc) {
-                            font-size: 1.4vw;
+                            font-size: clamp(8px, 1.4vw, 14px);
                             color: black;
                         }
                     }
@@ -1426,7 +1453,7 @@ body {
                             font-weight: 600;
                         }
                         @include screen(pc) {
-                            font-size: 1.5vw;
+                            font-size: clamp(10px, 1.5vw, 15px);
                             padding: 16px 41.5px;
                             font-weight: 600;
                         }
@@ -1476,10 +1503,10 @@ body {
                         letter-spacing: 0.03rem;
                     }
                     @include screen(pc) {
-                        font-size: 1.4vw;
+                        font-size: clamp(8px, 1.4vw, 14px);
                         leter-spacing: 0.02rem;
-                        padding-top: 9%;
-                        padding-bottom: 9%;
+                        padding-top: 30px;
+                        padding-bottom: 30px;
                     }
                     .accordion__arrow--down {
                         transform: rotateX(180deg);
@@ -1518,9 +1545,9 @@ body {
                             letter-spacing: 0.03rem;
                         }
                         @include screen(pc) {
-                            font-size: 1.35vw;
+                            font-size: clamp(8px, 1.35vw, 14px);
                             letter-spacing: 0.02rem;
-                            margin-bottom: 6.25%;
+                            margin-bottom: 20px;
                         }
                     }
                 }
@@ -1552,9 +1579,9 @@ body {
                         font-size: 1.8vw;
                     }
                     @include screen(pc) {
-                        padding-top: 9%;
-                        padding-bottom: 9%;
-                        font-size: 1.4vw;
+                        padding-top: 30px;
+                        padding-bottom: 20px;
+                        font-size: clamp(8px, 1.4vw, 14px);
                     }
                 }
                 .follow-links__link {
@@ -1564,7 +1591,10 @@ body {
                         color: $footer-gray;
                     } 
                     &:not(:last-child) {
-                        margin-right: 3.8%;
+                        margin-right: 10px;
+                        @include screen(pc) {
+                            margin-right: 0px;
+                        }
                     }
                     svg {
                         width: 32px;
@@ -1582,11 +1612,11 @@ body {
             font-size: 2vw;
         }
         @include screen(pc) {
-            font-size: 1.35vw;
+            font-size: clamp(10px, 1.35vw, 14px);
         }
         .footer__bottom--wrapper {
-            margin-left: 4%;
-            margin-right: 4%;
+            max-width: 1280px;
+            margin: 0 auto;
             & > div {
                 padding-top: 8%;
                 padding-bottom: 2%;
@@ -1611,6 +1641,8 @@ body {
                 justify-content: space-between;
                 border-bottom: 0.7px solid $non-activated-gray;
                 letter-spacing: 0.02rem;
+                margin-left: 30px;
+                margin-right: 30px;
                 @include screen(pc) {
                     display: flex;
                     justify-content: center;
@@ -1657,7 +1689,7 @@ body {
                 }
                 @include screen(pc) {
                     grid-template-columns: repeat(3, 1fr);
-                    font-size: 1.4vw;
+                    font-size: clamp(10px, 1.4vw, 14px);
                     padding-top: 2%;
                     padding-bottom: 2%;
                 }
@@ -1712,7 +1744,7 @@ body {
                             font-size: 2.5vw;
                         }
                         @include screen(pc) {
-                            font-size: 1.4vw;
+                            font-size: clamp(10px, 1.4vw, 14px);
                         }
                     }
                 }
