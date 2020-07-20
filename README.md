@@ -6,4 +6,4 @@ Cloning layouts of awesome websites to improve SCSS skill
 
 - [x] https://besthorrorscenes.com/
 - [x] https://paint-box.com/
-- [ ] https://www.magicleap.com/en-us
+- [x] https://www.magicleap.com/en-us
