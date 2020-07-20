@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/YunhwanJung/clone-layouts/issues"
   },
-  "homepage": "https://github.com/YunhwanJung/clone-layouts#readme",
+  "homepage": "https://github.com/YunhwanJung/clone-layouts/templates/index.magic-leap.html",
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.9.0",
