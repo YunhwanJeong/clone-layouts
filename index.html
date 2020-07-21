@@ -881,18 +881,6 @@
                             aboveHamburgerLine.className.baseVal = 'hamburger__above-line';
                             bottomHamburgerLine.className.baseVal = 'hamburger__bottom-line';
                         }
-                    } else if (computedNavStyle.visibility === 'visible') {
-                        if (html.scrollTop > 0) {
-                            brandingSvg.className.baseVal = 'inner-header__branding-svg--not-top';
-                            header.className = 'outer-header-white';
-                            shopBtn.className = 'inner-header__kit--shop-button-red';
-                            nav.className = 'inner-header__nav--pc-color-black';
-                        } else if (html.scrollTop === 0) {
-                            brandingSvg.className.baseVal = 'inner-header__branding-svg--top';
-                            header.className = 'outer-header-transparent';
-                            shopBtn.className = 'inner-header__kit--shop-button-white';
-                            nav.className = 'inner-header__nav';
-                        }
                     }
                 }, 200);
             }
