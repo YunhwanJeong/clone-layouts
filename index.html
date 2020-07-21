@@ -72,7 +72,7 @@
                                 </div>
                             </div>
                         </div>
-                        <video autoplay muted loop id="heroVideo" class="hero__video">
+                        <video autoplay muted loop playsinline class="hero__video">
                             <source src="./assets/magic-leap/file_example_MP4_1280w.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -848,10 +848,6 @@
             </div>
         </footer>
     </div>
-    <script>
-        var heroVideo = document.getElementById('heroVideo');
-        heroVideo.play();
-    </script>
     <script>
         var html = document.getElementById('html');
         var body = document.getElementById('body');
