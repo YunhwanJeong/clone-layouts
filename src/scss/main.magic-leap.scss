@@ -1251,10 +1251,14 @@ body {
                 line-height: 1.2;
                 text-align: center;
                 @include screen(t) {
+                    display: block;
+                    margin-bottom: 30px;
                     font-size: 3.8vw;
                     letter-spacing: 0.02rem;
                 }
                 @include screen(pc) {
+                    display: block;
+                    margin-bottom: 40px;
                     font-size: clamp(20px, 3.2vw, 30px);
                     letter-spacing: 0.02rem;
                     text-align: left;
@@ -1271,7 +1275,7 @@ body {
                 input {
                     width: 100%;
                     height: 100%;
-                    padding-top: 3.5%;
+                    padding-top: 20px;
                 }
                 label {
                     font-size: 4.3vw;
@@ -1284,29 +1288,27 @@ body {
                     transition: top 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
                     @include screen(t) {
                         font-size: 2.2vw;
-                        top: 68%;
                     }
                     @include screen(pc) {
                         font-size: clamp(10px, 1.6vw, 16px);
-                        top: 66%;
                     }
                 }
                 .news-letter__body--email {
-                    margin-top: 15.5%;
+                    margin-top: 53px;
                     position: relative;
-                    min-height: 5vh;
+                    height: 38px;
                     border-bottom: 1.67px solid $non-activated-gray;
                     @include screen(t) {
                         max-width: 30%;
+                        margin-top: 0px;
                         margin-right: 24px;
                         flex-basis: 30%;
-                        margin-top: 4%;
                     }
                     @include screen(pc) {
-                        max-width: 26.5%;
+                        max-width: 25%;
+                        margin-top: 0px;
                         margin-right: 24px;
-                        flex-basis: 26.5%;
-                        margin-top: 3%;
+                        flex-basis: 25%;
                         order: 1;
                     }
                     input:focus + label {
@@ -1322,21 +1324,21 @@ body {
                     }
                 }
                 .news-letter__body--name {
-                    margin-top: 13%;
+                    margin-top: 45px;
                     position: relative;
-                    min-height: 5vh;
+                    height: 38px;
                     border-bottom: 1.67px solid $non-activated-gray;
                     @include screen(t) {
                         flex-basis: 30%;
+                        margin-top: 0px;
                         max-width: 30%;
                         margin-right: 24px;
-                        margin-top: 4%;
                     }
                     @include screen(pc) {
-                        max-width: 26.5%;
+                        max-width: 25%;
+                        margin-top: 0px;
                         margin-right: 24px;
-                        flex-basis: 26.5%;
-                        margin-top: 3%;
+                        flex-basis: 25%;
                         order: 2;
                     }
                     input:focus + label {
@@ -1352,20 +1354,20 @@ body {
                     }
                 }
                 .news-letter__body--interest {
-                    margin-top: 15.5%;
+                    margin-top: 45px;
                     position: relative;
-                    min-height: 3.5vh;
+                    height: 38px;
                     border-bottom: 1.67px solid $non-activated-gray;
                     @include screen(t) {
+                        margin-top: 0px;
                         flex-basis: 30%;
                         max-width: 30%;
-                        margin-top: 4%;
                     }
                     @include screen(pc) {
-                        max-width: 26.5%;
+                        max-width: 25%;
+                        margin-top: 0px;
                         margin-right: 24px;
-                        flex-basis: 26.5%;
-                        margin-top: 3%;
+                        flex-basis: 25%;
                         order: 3;
                     }
                     select {
@@ -1377,14 +1379,14 @@ body {
                         font-weight: 300;
                         color: $non-activated-font-gray;
                         z-index: 1;
+                        top: 50%;
+                        transform: translateY(-50%);
                         @include screen(t) {
                             font-size: 2vw;
-                            top: 50%;
                             letter-spacing: 0.02rem;
                         }
                         @include screen(pc) {
                             font-size: clamp(10px, 1.6vw, 16px);
-                            top: 50%;
                             letter-spacing: 0.02rem;
                         }
                         & > option {
@@ -1397,21 +1399,21 @@ body {
                         color: black;
                         position: absolute;
                         right: 1%;
-                        bottom: 30%;
+                        top: 50%;
+                        transform: translateY(-50%);
                         @include screen(t, pc) {
                             width: 7%;
                             right: 2.5%;
-                            top: 50%;
                         }
                     }
                 }
                 .news-letter__body--explanation {
-                    margin-top: 15.5%;
+                    margin-top: 53px;
                     @include screen (t) {
-                        margin-top: 4%;
+                        margin-top: 29px;
                     }
                     @include screen(pc) {
-                        margin-top: 5%;
+                        margin-top: 40px;
                         order: 5;
                     }
                     p {
@@ -1430,13 +1432,14 @@ body {
                     }
                 }
                 .news-letter__body--submit {
-                    margin-top: 10%;
+                    margin-top: 34px;
                     text-align: center;
                     @include screen(t) {
-                        margin: 4.5% auto 0% auto;
+                        margin: 32px auto 0px auto;
                     }
                     @include screen(pc) {
-                        margin-top: 3%;
+                        position: relative;
+                        margin: -8px 0px 0px 20px;
                         order: 4;
                     }
                     button {
@@ -1450,12 +1453,12 @@ body {
                         @include screen(t) {
                             font-size: 2vw;
                             padding: 16px 41.5px;
-                            font-weight: 600;
                         }
                         @include screen(pc) {
+                            position: absolute;
+                            top: 0;
                             font-size: clamp(10px, 1.5vw, 15px);
                             padding: 16px 41.5px;
-                            font-weight: 600;
                         }
                     }
                 }
