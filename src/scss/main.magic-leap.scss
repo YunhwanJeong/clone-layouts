@@ -1514,7 +1514,6 @@ body {
                         height: auto;
                         position: absolute;
                         right: 2.5%;
-                        z-index: 1;
                         @include screen(t, pc) {
                             display: none;
                         }
@@ -1524,7 +1523,6 @@ body {
                         height: auto;
                         position: absolute;
                         right: 2.5%;
-                        z-index: 1;
                     }
                 }
                 .accordion__item--linklist-hidden {
